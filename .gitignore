@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+.next/
+.nuxt/
+.output/
+.vercel/
+
+# Environment files (NEVER commit)
+.env
+.env.local
+.env.production
+.env.staging
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+.ts-error-baseline
+
+# Testing
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# Misc
+*.pid
+*.seed
+*.pid.lock
+.cache/
+tmp/
+temp/
+
+# Claude Code worktrees
+.claude/worktrees/

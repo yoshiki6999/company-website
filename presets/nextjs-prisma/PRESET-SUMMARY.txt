@@ -1,0 +1,189 @@
+================================================================================
+NEXT.JS + PRISMA + NEON PRESET - COMPLETE SKELETON CREATED
+================================================================================
+
+Location: /sessions/adoring-pensive-franklin/mnt/ai-project-template/presets/nextjs-prisma/
+
+Total Files Created: 20
+
+STRUCTURE:
+================================================================================
+
+Root Configuration Files:
+  ✓ package.json                 - Next.js 15 + Prisma 6 + Neon dependencies
+  ✓ tsconfig.json                - TypeScript strict mode enabled
+  ✓ next.config.ts               - Minimal Next.js configuration
+  ✓ vitest.config.ts             - Unit test configuration
+  ✓ playwright.config.ts         - E2E test configuration
+  ✓ .eslintrc.json               - Next.js ESLint rules
+  ✓ .prettierrc.json             - Code formatting rules
+  ✓ .gitignore                   - Git ignore patterns
+  ✓ .env.example                 - Environment template
+
+Documentation:
+  ✓ README.md                    - Quick start guide for non-technical users
+  ✓ DEVELOPMENT.md               - Development guide for AI agents
+  ✓ SPEC-TEMPLATE.md             - Product spec template (product manager language)
+
+Database:
+  ✓ prisma/schema.prisma         - PostgreSQL schema with User base table
+
+Application:
+  ✓ src/app/layout.tsx           - Root layout with Japanese locale
+  ✓ src/app/page.tsx             - Home page with quick links
+  ✓ src/app/globals.css          - Global CSS styles
+  ✓ src/app/api/health/route.ts  - Health check API endpoint
+  ✓ src/lib/db.ts                - Prisma client singleton
+  ✓ src/lib/env.ts               - Type-safe environment variables (Zod)
+
+Testing:
+  ✓ __tests__/health.test.ts     - Sample unit test
+
+================================================================================
+
+KEY FEATURES:
+================================================================================
+
+1. PRODUCTION-READY TECH STACK
+   - Next.js 15 (App Router)
+   - Prisma 6 (TypeScript ORM)
+   - PostgreSQL via Neon (serverless)
+   - TypeScript with strict mode
+   - Zod for validation
+   - Vitest + Playwright for testing
+
+2. OPTIMIZED FOR AI-POWERED DEVELOPMENT
+   - SPEC-TEMPLATE.md guides non-technical users to write specifications
+   - DEVELOPMENT.md provides complete guide for AI agents
+   - Clear separation of concerns (API, DB, UI)
+   - Atomic commit structure ready
+
+3. JAPANESE MARKET SUPPORT
+   - lang="ja" HTML attribute for SEO
+   - UTF-8 encoding by default
+   - PostgreSQL supports all Unicode characters
+   - Ready for Japanese text content
+
+4. ZERO-CODE WORKFLOW
+   - Users write SPEC.md using product manager language
+   - AI agents autonomously:
+     * Design database schema
+     * Create API endpoints
+     * Build React components
+     * Write and run tests
+     * Verify functionality
+
+5. ENVIRONMENT SAFETY
+   - Type-safe env vars using Zod
+   - Never allows unvalidated environment access
+   - Clear separation between dev, preview, production
+
+================================================================================
+
+SETUP INSTRUCTIONS FOR END USERS:
+================================================================================
+
+1. Copy preset to project:
+   cp -r presets/nextjs-prisma ~/my-new-app
+
+2. Install dependencies:
+   npm install
+
+3. Configure environment:
+   cp .env.example .env.local
+   # Edit .env.local with your Neon PostgreSQL connection string
+
+4. Initialize database:
+   npm run db:push
+
+5. Start development:
+   npm run dev
+
+6. Write your feature spec:
+   - Use SPEC-TEMPLATE.md as guide
+   - Create SPEC.md in product manager language
+   - Share with your AI agent
+
+================================================================================
+
+AVAILABLE NPM COMMANDS:
+================================================================================
+
+npm run dev              - Start dev server (localhost:3000)
+npm run build            - Build for production
+npm run start            - Start production server
+npm run check            - Type-check TypeScript
+npm run test             - Run unit tests (Vitest)
+npm run test:watch       - Run tests in watch mode
+npm run test:e2e         - Run end-to-end tests (Playwright)
+npm run db:generate      - Generate Prisma client
+npm run db:push          - Sync schema to database
+npm run db:studio        - Open visual database browser
+npm run db:migrate       - Create migration
+npm run lint             - Check code style
+
+================================================================================
+
+TECH STACK VERSIONS:
+================================================================================
+
+Runtime:
+  - Node.js: >=18.0.0
+  - React: 19.x
+  - Next.js: 15.x
+
+Backend/Database:
+  - Prisma Client: 6.x
+  - PostgreSQL: 12+ (via Neon)
+
+Development:
+  - TypeScript: 5.6+
+  - Vitest: 2.x (unit tests)
+  - Playwright: 1.48+ (E2E tests)
+  - Zod: 3.23+ (validation)
+
+Quality:
+  - ESLint: 9.x
+  - Prettier: built-in via prettier rc
+
+================================================================================
+
+DEPLOYMENT READY:
+================================================================================
+
+This preset is configured for zero-effort deployment to:
+  ✓ Vercel (recommended for Next.js)
+  ✓ Railway
+  ✓ Any Node.js hosting with PostgreSQL
+
+All environment variables are:
+  ✓ Type-safe
+  ✓ Validated on startup
+  ✓ Never hardcoded
+  ✓ Production-ready
+
+================================================================================
+
+NOTES FOR AI AGENTS:
+================================================================================
+
+This preset follows the "AI Autonomous Development Iron Rules v5.0":
+
+- Backend API-first development
+- Mandatory verification checks (environment, API, UI, E2E)
+- Self-healing loop on failures
+- Semantic versioning for commits
+- Module-separated schema in Prisma
+- Type-safe environment handling
+- Isolated testing per module
+- Clear separation of concerns
+
+See DEVELOPMENT.md for complete guidance.
+
+================================================================================
+
+Created: 2026-03-01
+Version: 1.0.0
+Status: Production-ready
+Target Users: Zero-code founders using AI agents
+Market Focus: Japanese market support included

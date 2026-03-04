@@ -1,0 +1,30 @@
+name: Deploy Preview
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: preview
+    steps:
+      - uses: actions/checkout@v4
+
+      # === Railway Preview ===
+      - name: Deploy to Railway (Preview)
+        if: ${{ secrets.RAILWAY_TOKEN != '' }}
+        uses: bervProject/railway-deploy@main
+        with:
+          railway_token: ${{ secrets.RAILWAY_TOKEN }}
+          service: ${{ vars.RAILWAY_PREVIEW_SERVICE_ID }}
+
+      # === Vercel Preview ===
+      - name: Deploy to Vercel (Preview)
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          # No --prod flag = deploys as preview
