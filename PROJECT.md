@@ -1,73 +1,48 @@
-# [Project Name] — Project Overview
+# こころナビ — Project Overview
 
 > AI handover document. New AI developers: read this file first to understand the full picture.
 
 ## One-Line Description
-<!-- [What this project does, who it's for, what problem it solves] -->
+こころナビ（Kokoro Navi）— 楽悠株式会社のメンタルヘルスサポートサービスのコーポレートサイト。
 
 ## User Profile
-- Developer: <!-- [zero-code background / full-stack engineer / etc.] -->
-- Target market: <!-- [Japan / Global / etc.] -->
-- Devices: <!-- [MacBook / Windows / etc.] -->
+- Developer: zero-code background, relies on AI for all coding
+- Target market: Japan
+- Devices: MacBook M4 Air + iPhone 16 Plus
 
 ## Tech Stack
 | Layer | Technology | Notes |
 |-------|-----------|-------|
-| Frontend | <!-- [React / Next.js / etc.] --> | <!-- [additional notes] --> |
-| Backend | <!-- [Express / Hono / etc.] --> | <!-- [additional notes] --> |
-| Database | <!-- [Neon / Supabase / etc.] --> | <!-- [additional notes] --> |
-| ORM | <!-- [Drizzle / Prisma / etc.] --> | <!-- [additional notes] --> |
-| AI | <!-- [Gemini / Claude / etc.] --> | <!-- [usage notes] --> |
-| Deployment | <!-- [Railway / Vercel / etc.] --> | <!-- [additional notes] --> |
-| Testing | <!-- [Vitest / Playwright / etc.] --> | <!-- [additional notes] --> |
+| Frontend | Static HTML/CSS | Single landing page, will evolve as needed |
+| Deployment | Vercel | Auto-deploy from GitHub main branch |
+| Domain | raku-yu.com / www.rakuyujp.com | Custom domains on Vercel |
 
 ## System Architecture
 ```
-<!-- ASCII diagram or text description of system architecture -->
-<!-- Example:
-  Browser ──→ CDN ──→ Frontend (React SPA)
-                          │
-                          ▼
-                     API Server (Express)
-                      │         │
-                      ▼         ▼
-                  Database    AI Services
-                  (Neon PG)   (Gemini API)
--->
+  Browser ──→ Vercel CDN ──→ Static HTML
+                               (index.html)
 ```
 
 ## Module Inventory
 | Module | Function | Core Files | Status |
 |--------|----------|-----------|--------|
-| <!-- [module-name] --> | <!-- [description] --> | <!-- [key file paths] --> | <!-- completed / in-dev / planned --> |
-
-## API Endpoint Overview
-| Method | Path | Function | Auth |
-|--------|------|----------|------|
-| <!-- [GET/POST] --> | <!-- [/api/xxx] --> | <!-- [description] --> | <!-- [yes/no] --> |
-
-## Database Overview
-- Total tables: <!-- N -->
-- Schema file: <!-- [path] -->
-- Key relationships: <!-- [brief description] -->
+| landing | Landing page with brand intro | index.html | completed |
 
 ## Environment Info
-- Local dev port: `${PORT}`
-- Production URL: <!-- [url] -->
-- Staging URL: <!-- [url] -->
-- Database platform: <!-- [Neon/Supabase] @ [region] -->
+- Production URL: https://raku-yu.com
+- Alt domain: https://www.rakuyujp.com
+- Vercel project: rakuyu-site
+- GitHub repo: yoshiki6999/company-website
 
 ## Key Configuration Files
 | File | Purpose |
 |------|---------|
 | CLAUDE.md | AI development rules (Iron Rules v5.0) |
 | docs/STATUS.md | Current development progress |
-| docs/CONTRACT.md | Inter-module API contracts |
-| docs/MODULE-LOCK.md | File ownership for multi-agent dev |
-| .env.example | Environment variable template |
+| vercel.json | Vercel deployment configuration |
+| PROJECT.md | This file — project overview |
 
 ## Update Rules
 - New/removed module → update Module Inventory
-- New API endpoint → update API Endpoint Overview
 - Tech stack change → update Tech Stack table
 - Does NOT need updates every session (unlike STATUS.md)

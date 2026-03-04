@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>こころナビ - 心の整え方 | 楽悠株式会社</title>
+<meta name="description" content="こころナビ - 心の整え方。3分でわかる、7日で変わる。楽悠株式会社が提供するメンタルヘルスサポートサービス。">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap');
+
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif;
+    background: radial-gradient(ellipse at 50% 40%, #7a9e8e 0%, #6b8f7e 30%, #5a7d6d 60%, #4d6e5f 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+  }
+
+  /* Subtle noise texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding-bottom: 60px;
+  }
+
+  /* Leaf icon */
+  .leaf-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 36px;
+    position: relative;
+    animation: leafSway 4s ease-in-out infinite;
+  }
+
+  .leaf-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+  }
+
+  @keyframes leafSway {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  /* Main title area */
+  .title-block {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .main-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(42px, 8vw, 72px);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  }
+
+  .sub-concept {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 4vw, 36px);
+    font-weight: 500;
+    color: rgba(255,255,255,0.88);
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  /* Romanization line */
+  .romanization {
+    text-align: center;
+    margin-top: 14px;
+    margin-bottom: 8px;
+  }
+
+  .romanization span {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: clamp(13px, 2.2vw, 18px);
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .romanization .divider {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0;
+  }
+
+  /* Tagline */
+  .tagline {
+    text-align: center;
+    margin-top: 28px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(14px, 2.5vw, 19px);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.52);
+  }
+
+  /* Footer */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 28px 20px;
+    z-index: 1;
+  }
+
+  .company-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(13px, 2vw, 16px);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* Fade-in animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 1s ease forwards;
+  }
+
+  .fade-in:nth-child(1) { animation-delay: 0.2s; }
+  .fade-in:nth-child(2) { animation-delay: 0.5s; }
+  .fade-in:nth-child(3) { animation-delay: 0.8s; }
+  .fade-in:nth-child(4) { animation-delay: 1.1s; }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .footer {
+    opacity: 0;
+    animation: fadeUp 1s ease 1.4s forwards;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 600px) {
+    .title-row {
+      gap: 12px;
+    }
+    .romanization .divider {
+      width: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Leaf Icon -->
+  <div class="leaf-icon fade-in">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Stem -->
+      <path d="M50 95 Q48 70 52 50 Q54 35 50 20" fill="none" stroke="#5a8a4a" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Main leaf -->
+      <ellipse cx="50" cy="38" rx="18" ry="28" fill="#6aad55" transform="rotate(-8 50 38)"/>
+      <!-- Leaf highlight -->
+      <ellipse cx="47" cy="34" rx="10" ry="18" fill="#7ec668" transform="rotate(-8 47 34)" opacity="0.6"/>
+      <!-- Leaf vein -->
+      <path d="M50 18 Q49 30 50 55" fill="none" stroke="#5a9a48" stroke-width="1.2" opacity="0.5"/>
+      <!-- Small side leaves -->
+      <ellipse cx="38" cy="52" rx="8" ry="14" fill="#6aad55" transform="rotate(-30 38 52)"/>
+      <ellipse cx="36" cy="50" rx="5" ry="9" fill="#7ec668" transform="rotate(-30 36 50)" opacity="0.5"/>
+      <ellipse cx="60" cy="46" rx="7" ry="12" fill="#6aad55" transform="rotate(20 60 46)"/>
+      <ellipse cx="58" cy="44" rx="4" ry="8" fill="#7ec668" transform="rotate(20 58 44)" opacity="0.5"/>
+      <!-- Tiny top leaf -->
+      <ellipse cx="46" cy="22" rx="5" ry="10" fill="#78c060" transform="rotate(-20 46 22)"/>
+    </svg>
+  </div>
+
+  <!-- Title -->
+  <div class="title-block fade-in">
+    <div class="title-row">
+      <span class="main-title">こころナビ</span>
+      <span class="sub-concept">心の整え方</span>
+    </div>
+  </div>
+
+  <!-- Romanization -->
+  <div class="romanization fade-in">
+    <span>K o k o r o N a v i</span>
+    <span class="divider">—</span>
+    <span>K o k o r o&nbsp; n o&nbsp; T o t o n o e k a t a</span>
+  </div>
+
+  <!-- Tagline -->
+  <div class="tagline fade-in">
+    3分でわかる、7日で変わる
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <span class="company-name">楽 悠 株 式 会 社</span>
+</div>
+
+</body>
+</html>

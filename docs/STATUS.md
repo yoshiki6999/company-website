@@ -1,40 +1,27 @@
 # Project Status
 
 ## Last Updated
-<!-- YYYY-MM-DD HH:MM -->
+2026-03-04 12:15
 
 ## Current Phase
-- **Current Task**: <!-- [what is being worked on right now] -->
-- **Branch**: <!-- [current working branch] -->
-- **Deploy Status**: staging <!-- status --> | production <!-- status -->
+- **Current Task**: Connecting Vercel project to GitHub repo for auto-deployment
+- **Branch**: main
+- **Deploy Status**: staging N/A | production raku-yu.com (active)
 
 ## Recent Changes (Last 5 Commits)
-<!-- Auto-updated by /status command -->
-<!-- Example:
-- abc1234 feat: add user authentication
-- def5678 fix: resolve login redirect loop
--->
+- 15cdea7 Initial commit (template scaffold)
+- (next) Add landing page HTML + Vercel static config
 
 ## Known Issues
-<!-- List all known bugs and issues -->
-<!-- Example:
-- [ ] Mobile Safari audio autoplay intermittent failure
-- [ ] routes.ts exceeds 3600 lines, needs splitting
-- [x] ~~Login timeout on slow connections~~ (fixed in abc1234)
--->
+- [ ] Vercel project not yet connected to this GitHub repo (manual step needed)
+- [ ] presets/ directory contains unused Next.js template (can be cleaned up later)
 
 ## Next Steps
-<!-- Prioritized list of what to do next -->
-<!-- Example:
-1. Complete voice chat error handling
-2. Add session history persistence
-3. Split routes.ts into per-module files
--->
+1. Connect Vercel rakuyu-site project to yoshiki6999/company-website repo
+2. Verify auto-deployment works
+3. Plan next features (additional pages, services, etc.)
 
 ## Architecture Notes
-<!-- Key technical decisions and patterns -->
-<!-- Example:
-- Voice analysis: Gemini 3.1 → JSON schema output
-- TTS: Gemini primary, DashScope fallback
-- Database: 25+ tables, Drizzle ORM
--->
+- Current site: single static HTML landing page
+- Vercel serves as CDN + hosting
+- presets/nextjs-prisma/ available for future upgrade to Next.js when dynamic features needed
